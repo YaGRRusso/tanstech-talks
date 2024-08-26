@@ -1,0 +1,14 @@
+// https://code.visualstudio.com/docs/editor/userdefinedsnippets
+// DiretórioArquivo: ${TM_DIRECTORY/.*[\\/\\\\](.*)/${1:/pascalcase}/}${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}
+// Diretório: ${TM_DIRECTORY/.*[\\/\\\\](.*)/${1:/pascalcase}/}
+// Arquivo: ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}
+// Variáveis: ${1}, ${1:default}, ${1|one,two,three|}...
+
+{
+  "Create ReactJS Component": {
+    "scope": "typescriptreact",
+    "prefix": "reactcomp",
+    "body": [],
+    "description": "Create ReactJS component with all is necessary"
+  },
+}
