@@ -1,0 +1,7 @@
+{
+  "hello": "Olá {{name}}",
+  "common": {
+    "loading": "Carregando",
+    "notFound": "Não encontrado"
+  }
+}
