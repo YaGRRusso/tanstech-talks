@@ -11,7 +11,7 @@ export default function RootLayout() {
   const { i18n } = useTranslation()
 
   return (
-    <>
+    <div className="font-poppins">
       <div className="flex justify-between gap-2 p-2">
         <div className="flex items-center gap-2">
           <Link to="/" className="[&.active]:font-bold">
@@ -36,6 +36,6 @@ export default function RootLayout() {
       <hr />
       <Outlet />
       <TanStackRouterDevtools />
-    </>
+    </div>
   )
 }
