@@ -14,6 +14,7 @@ export const Route = createFileRoute('/_layout/_header')({
 const routes: LinkProps[] = [
   { children: 'Tanstech Talks', to: '/' },
   { children: 'Pokemons', to: '/pokemons' },
+  { children: 'Search', to: '/pokemons/search' },
 ]
 
 function Header() {

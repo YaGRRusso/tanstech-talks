@@ -15,6 +15,7 @@ import { Route as LayoutImport } from './routes/_layout'
 import { Route as LayoutHeaderImport } from './routes/_layout/_header'
 import { Route as LayoutHeaderIndexImport } from './routes/_layout/_header/index'
 import { Route as LayoutHeaderPokemonsIndexImport } from './routes/_layout/_header/pokemons/index'
+import { Route as LayoutHeaderPokemonsSearchImport } from './routes/_layout/_header/pokemons/search'
 import { Route as LayoutHeaderPokemonsIdImport } from './routes/_layout/_header/pokemons/$id'
 
 // Create/Update Routes
@@ -38,6 +39,13 @@ const LayoutHeaderPokemonsIndexRoute = LayoutHeaderPokemonsIndexImport.update({
   path: '/pokemons/',
   getParentRoute: () => LayoutHeaderRoute,
 } as any)
+
+const LayoutHeaderPokemonsSearchRoute = LayoutHeaderPokemonsSearchImport.update(
+  {
+    path: '/pokemons/search',
+    getParentRoute: () => LayoutHeaderRoute,
+  } as any,
+)
 
 const LayoutHeaderPokemonsIdRoute = LayoutHeaderPokemonsIdImport.update({
   path: '/pokemons/$id',
@@ -76,6 +84,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutHeaderPokemonsIdImport
       parentRoute: typeof LayoutHeaderImport
     }
+    '/_layout/_header/pokemons/search': {
+      id: '/_layout/_header/pokemons/search'
+      path: '/pokemons/search'
+      fullPath: '/pokemons/search'
+      preLoaderRoute: typeof LayoutHeaderPokemonsSearchImport
+      parentRoute: typeof LayoutHeaderImport
+    }
     '/_layout/_header/pokemons/': {
       id: '/_layout/_header/pokemons/'
       path: '/pokemons'
@@ -93,6 +108,7 @@ export const routeTree = rootRoute.addChildren({
     LayoutHeaderRoute: LayoutHeaderRoute.addChildren({
       LayoutHeaderIndexRoute,
       LayoutHeaderPokemonsIdRoute,
+      LayoutHeaderPokemonsSearchRoute,
       LayoutHeaderPokemonsIndexRoute,
     }),
   }),
@@ -121,6 +137,7 @@ export const routeTree = rootRoute.addChildren({
       "children": [
         "/_layout/_header/",
         "/_layout/_header/pokemons/$id",
+        "/_layout/_header/pokemons/search",
         "/_layout/_header/pokemons/"
       ]
     },
@@ -130,6 +147,10 @@ export const routeTree = rootRoute.addChildren({
     },
     "/_layout/_header/pokemons/$id": {
       "filePath": "_layout/_header/pokemons/$id.tsx",
+      "parent": "/_layout/_header"
+    },
+    "/_layout/_header/pokemons/search": {
+      "filePath": "_layout/_header/pokemons/search.tsx",
       "parent": "/_layout/_header"
     },
     "/_layout/_header/pokemons/": {

@@ -8,14 +8,14 @@ export const Route = createFileRoute('/_layout/_header/pokemons/$id')({
 
 function Page() {
   const { id } = Route.useParams()
-  const { data } = useGetPokemonByName(id)
+  const { data, isLoading } = useGetPokemonByName(id)
 
   return (
     <>
       <Link className="text-muted-foreground" to="/pokemons">
         Back
       </Link>
-      <PokemonCard {...data} />
+      <PokemonCard pokemon={{ ...data }} isLoading={isLoading} />
     </>
   )
 }
