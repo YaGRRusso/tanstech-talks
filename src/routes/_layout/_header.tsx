@@ -16,6 +16,8 @@ const routes: LinkProps[] = [
   { children: 'Heavy', to: '/heavy' },
   { children: 'Light', to: '/light' },
   { children: 'Error', to: '/error' },
+  // @ts-expect-error intentional error
+  { children: 'Not Found', to: '/notfound' },
   { children: 'Pokemons', to: '/pokemons' },
   { children: 'Search', to: '/pokemons/search' },
 ]

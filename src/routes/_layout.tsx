@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 export const Route = createFileRoute('/_layout')({
   component: Layout,
+  notFoundComponent: () => <div>Cade?</div>,
 })
 
 const queryClient = new QueryClient()
