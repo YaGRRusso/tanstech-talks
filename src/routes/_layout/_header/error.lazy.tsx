@@ -13,7 +13,7 @@ function PageError(error: ErrorComponentProps) {
   return (
     <>
       <Title>{error.error.name}</Title>
-      <Badge >{error.error.message}</Badge>
+      <Badge>{error.error.message}</Badge>
       <Button onClick={() => error.reset()} variant="outline">
         Try Again
       </Button>

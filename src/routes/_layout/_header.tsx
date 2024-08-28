@@ -29,7 +29,7 @@ function Header() {
   return (
     <div className={cn('flex min-h-screen flex-col bg-background text-foreground', theme)}>
       <header className="container flex w-full items-center justify-between gap-4 py-4">
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-4">
           {routes.map(({ children, ...route }) => (
             <Link
               key={route.to}
