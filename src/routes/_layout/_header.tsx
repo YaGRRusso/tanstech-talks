@@ -13,7 +13,7 @@ export const Route = createFileRoute('/_layout/_header')({
 
 const routes: LinkProps[] = [
   { children: 'Tanstech Talks', to: '/' },
-  { children: 'Posts', to: '/posts' },
+  { children: 'Pokemons', to: '/pokemons' },
 ]
 
 function Header() {
@@ -27,14 +27,14 @@ function Header() {
           {routes.map(({ children, ...route }) => (
             <Link
               key={route.to}
-              className="text-foreground/80 transition-colors hover:opacity-80 [&.active]:text-foreground/100"
+              className="text-foreground/80 transition-all hover:opacity-80 [&.active]:text-foreground/100"
               {...route}
             >
               {children}
             </Link>
           ))}
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 max-sm:hidden">
           <Switch checked={theme === 'dark'} onCheckedChange={toggleTheme}>
             {theme === 'light' && <Sun />}
             {theme === 'dark' && <Moon />}
@@ -53,7 +53,7 @@ function Header() {
           </Select.Root>
         </div>
       </header>
-      <div className="container flex flex-1 flex-col py-4">
+      <div className="container flex flex-1 flex-col items-center justify-center gap-8 py-4">
         <Outlet />
       </div>
     </div>

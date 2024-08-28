@@ -14,8 +14,8 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as LayoutImport } from './routes/_layout'
 import { Route as LayoutHeaderImport } from './routes/_layout/_header'
 import { Route as LayoutHeaderIndexImport } from './routes/_layout/_header/index'
-import { Route as LayoutHeaderPostsIndexImport } from './routes/_layout/_header/posts/index'
-import { Route as LayoutHeaderPostsIdImport } from './routes/_layout/_header/posts/$id'
+import { Route as LayoutHeaderPokemonsIndexImport } from './routes/_layout/_header/pokemons/index'
+import { Route as LayoutHeaderPokemonsIdImport } from './routes/_layout/_header/pokemons/$id'
 
 // Create/Update Routes
 
@@ -34,13 +34,13 @@ const LayoutHeaderIndexRoute = LayoutHeaderIndexImport.update({
   getParentRoute: () => LayoutHeaderRoute,
 } as any)
 
-const LayoutHeaderPostsIndexRoute = LayoutHeaderPostsIndexImport.update({
-  path: '/posts/',
+const LayoutHeaderPokemonsIndexRoute = LayoutHeaderPokemonsIndexImport.update({
+  path: '/pokemons/',
   getParentRoute: () => LayoutHeaderRoute,
 } as any)
 
-const LayoutHeaderPostsIdRoute = LayoutHeaderPostsIdImport.update({
-  path: '/posts/$id',
+const LayoutHeaderPokemonsIdRoute = LayoutHeaderPokemonsIdImport.update({
+  path: '/pokemons/$id',
   getParentRoute: () => LayoutHeaderRoute,
 } as any)
 
@@ -69,18 +69,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutHeaderIndexImport
       parentRoute: typeof LayoutHeaderImport
     }
-    '/_layout/_header/posts/$id': {
-      id: '/_layout/_header/posts/$id'
-      path: '/posts/$id'
-      fullPath: '/posts/$id'
-      preLoaderRoute: typeof LayoutHeaderPostsIdImport
+    '/_layout/_header/pokemons/$id': {
+      id: '/_layout/_header/pokemons/$id'
+      path: '/pokemons/$id'
+      fullPath: '/pokemons/$id'
+      preLoaderRoute: typeof LayoutHeaderPokemonsIdImport
       parentRoute: typeof LayoutHeaderImport
     }
-    '/_layout/_header/posts/': {
-      id: '/_layout/_header/posts/'
-      path: '/posts'
-      fullPath: '/posts'
-      preLoaderRoute: typeof LayoutHeaderPostsIndexImport
+    '/_layout/_header/pokemons/': {
+      id: '/_layout/_header/pokemons/'
+      path: '/pokemons'
+      fullPath: '/pokemons'
+      preLoaderRoute: typeof LayoutHeaderPokemonsIndexImport
       parentRoute: typeof LayoutHeaderImport
     }
   }
@@ -92,8 +92,8 @@ export const routeTree = rootRoute.addChildren({
   LayoutRoute: LayoutRoute.addChildren({
     LayoutHeaderRoute: LayoutHeaderRoute.addChildren({
       LayoutHeaderIndexRoute,
-      LayoutHeaderPostsIdRoute,
-      LayoutHeaderPostsIndexRoute,
+      LayoutHeaderPokemonsIdRoute,
+      LayoutHeaderPokemonsIndexRoute,
     }),
   }),
 })
@@ -120,20 +120,20 @@ export const routeTree = rootRoute.addChildren({
       "parent": "/_layout",
       "children": [
         "/_layout/_header/",
-        "/_layout/_header/posts/$id",
-        "/_layout/_header/posts/"
+        "/_layout/_header/pokemons/$id",
+        "/_layout/_header/pokemons/"
       ]
     },
     "/_layout/_header/": {
       "filePath": "_layout/_header/index.tsx",
       "parent": "/_layout/_header"
     },
-    "/_layout/_header/posts/$id": {
-      "filePath": "_layout/_header/posts/$id.tsx",
+    "/_layout/_header/pokemons/$id": {
+      "filePath": "_layout/_header/pokemons/$id.tsx",
       "parent": "/_layout/_header"
     },
-    "/_layout/_header/posts/": {
-      "filePath": "_layout/_header/posts/index.tsx",
+    "/_layout/_header/pokemons/": {
+      "filePath": "_layout/_header/pokemons/index.tsx",
       "parent": "/_layout/_header"
     }
   }
