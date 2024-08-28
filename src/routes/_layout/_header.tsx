@@ -13,7 +13,7 @@ export const Route = createFileRoute('/_layout/_header')({
 
 const routes: LinkProps[] = [
   { children: 'Tanstech Talks', to: '/' },
-  { children: 'List', to: '/list' },
+  { children: 'Posts', to: '/posts' },
 ]
 
 function Header() {
@@ -27,7 +27,7 @@ function Header() {
           {routes.map(({ children, ...route }) => (
             <Link
               key={route.to}
-              className="text-foreground/80 transition-colors hover:text-foreground/60 [&.active]:text-foreground/100"
+              className="text-foreground/80 transition-colors hover:opacity-80 [&.active]:text-foreground/100"
               {...route}
             >
               {children}

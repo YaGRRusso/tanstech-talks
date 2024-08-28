@@ -14,7 +14,8 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as LayoutImport } from './routes/_layout'
 import { Route as LayoutHeaderImport } from './routes/_layout/_header'
 import { Route as LayoutHeaderIndexImport } from './routes/_layout/_header/index'
-import { Route as LayoutHeaderListIndexImport } from './routes/_layout/_header/list/index'
+import { Route as LayoutHeaderPostsIndexImport } from './routes/_layout/_header/posts/index'
+import { Route as LayoutHeaderPostsIdImport } from './routes/_layout/_header/posts/$id'
 
 // Create/Update Routes
 
@@ -33,8 +34,13 @@ const LayoutHeaderIndexRoute = LayoutHeaderIndexImport.update({
   getParentRoute: () => LayoutHeaderRoute,
 } as any)
 
-const LayoutHeaderListIndexRoute = LayoutHeaderListIndexImport.update({
-  path: '/list/',
+const LayoutHeaderPostsIndexRoute = LayoutHeaderPostsIndexImport.update({
+  path: '/posts/',
+  getParentRoute: () => LayoutHeaderRoute,
+} as any)
+
+const LayoutHeaderPostsIdRoute = LayoutHeaderPostsIdImport.update({
+  path: '/posts/$id',
   getParentRoute: () => LayoutHeaderRoute,
 } as any)
 
@@ -63,11 +69,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutHeaderIndexImport
       parentRoute: typeof LayoutHeaderImport
     }
-    '/_layout/_header/list/': {
-      id: '/_layout/_header/list/'
-      path: '/list'
-      fullPath: '/list'
-      preLoaderRoute: typeof LayoutHeaderListIndexImport
+    '/_layout/_header/posts/$id': {
+      id: '/_layout/_header/posts/$id'
+      path: '/posts/$id'
+      fullPath: '/posts/$id'
+      preLoaderRoute: typeof LayoutHeaderPostsIdImport
+      parentRoute: typeof LayoutHeaderImport
+    }
+    '/_layout/_header/posts/': {
+      id: '/_layout/_header/posts/'
+      path: '/posts'
+      fullPath: '/posts'
+      preLoaderRoute: typeof LayoutHeaderPostsIndexImport
       parentRoute: typeof LayoutHeaderImport
     }
   }
@@ -79,7 +92,8 @@ export const routeTree = rootRoute.addChildren({
   LayoutRoute: LayoutRoute.addChildren({
     LayoutHeaderRoute: LayoutHeaderRoute.addChildren({
       LayoutHeaderIndexRoute,
-      LayoutHeaderListIndexRoute,
+      LayoutHeaderPostsIdRoute,
+      LayoutHeaderPostsIndexRoute,
     }),
   }),
 })
@@ -106,15 +120,20 @@ export const routeTree = rootRoute.addChildren({
       "parent": "/_layout",
       "children": [
         "/_layout/_header/",
-        "/_layout/_header/list/"
+        "/_layout/_header/posts/$id",
+        "/_layout/_header/posts/"
       ]
     },
     "/_layout/_header/": {
       "filePath": "_layout/_header/index.tsx",
       "parent": "/_layout/_header"
     },
-    "/_layout/_header/list/": {
-      "filePath": "_layout/_header/list/index.tsx",
+    "/_layout/_header/posts/$id": {
+      "filePath": "_layout/_header/posts/$id.tsx",
+      "parent": "/_layout/_header"
+    },
+    "/_layout/_header/posts/": {
+      "filePath": "_layout/_header/posts/index.tsx",
       "parent": "/_layout/_header"
     }
   }
