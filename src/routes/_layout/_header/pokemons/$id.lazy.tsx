@@ -1,10 +1,15 @@
 import { useGetPokemonByName } from '@/hooks/queries/pokemons'
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { createLazyFileRoute, Link } from '@tanstack/react-router'
 import { PokemonCard } from '@/components/common/card'
 
-export const Route = createFileRoute('/_layout/_header/pokemons/$id')({
+export const Route = createLazyFileRoute('/_layout/_header/pokemons/$id')({
   component: Page,
+  pendingComponent: PendingPage,
 })
+
+function PendingPage() {
+  return <div>Loading...</div>
+}
 
 function Page() {
   const { id } = Route.useParams()

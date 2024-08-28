@@ -1,8 +1,8 @@
 import { Title } from '@/components/common/title'
-import { createFileRoute } from '@tanstack/react-router'
+import { createLazyFileRoute } from '@tanstack/react-router'
 import { useTranslation } from 'react-i18next'
 
-export const Route = createFileRoute('/_layout/_header/')({
+export const Route = createLazyFileRoute('/_layout/_header/')({
   component: Page,
 })
 

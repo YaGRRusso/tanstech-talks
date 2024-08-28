@@ -29,7 +29,12 @@ export const Route = createFileRoute('/_layout/_header/pokemons/search')({
   loaderDeps: ({ search: { name } }) => ({ name }),
   loader: ({ deps: { name } }) => getPokemonByName(name ?? ''),
   component: Page,
+  pendingComponent: PendingPage,
 })
+
+function PendingPage() {
+  return <div>Loading...</div>
+}
 
 function Page() {
   const loader = Route.useLoaderData()
