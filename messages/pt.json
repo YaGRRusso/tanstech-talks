@@ -3,5 +3,31 @@
   "common": {
     "loading": "Carregando",
     "notFound": "Não encontrado"
+  },
+  "features": {
+    "advancedCodeSplitting": {
+      "title": "Code Splitting Avançado",
+      "description": "Suporte para separar código em partes críticas e não-críticas, carregando componentes sob demanda para melhorar a performance."
+    },
+    "fileBasedRouting": {
+      "title": "Roteamento Baseado em Arquivos",
+      "description": "Estrutura de roteamento fácil de organizar e escalar, permitindo encapsular arquivos de rota em diretórios."
+    },
+    "bundlerCompatibility": {
+      "title": "Compatibilidade com Qualquer Bundler",
+      "description": "Mantém o processo de splitting simples e manual, tornando-o compatível com qualquer ferramenta de bundling."
+    },
+    "easeOfConfiguration": {
+      "title": "Facilidade de Configuração",
+      "description": "Uso intuitivo com convenções simples."
+    },
+    "typeSafety": {
+      "title": "Type Safety",
+      "description": "Uso de TypeScript para garantir segurança de tipos e evitar erros comuns em tempo de compilação."
+    },
+    "extensibilityAndFlexibility": {
+      "title": "Extensibilidade e Flexibilidade",
+      "description": "Permite a personalização e extensão da lógica de roteamento para atender a necessidades específicas de aplicativos complexos."
+    }
   }
 }

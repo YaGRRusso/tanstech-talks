@@ -3,5 +3,31 @@
   "common": {
     "loading": "Loading",
     "notFound": "Not Found"
+  },
+  "features": {
+    "advancedCodeSplitting": {
+      "title": "Advanced Code Splitting",
+      "description": "Support for separating code into critical and non-critical parts, loading components on demand to improve performance."
+    },
+    "fileBasedRouting": {
+      "title": "File-Based Routing",
+      "description": "Easy-to-organize and scalable routing structure, allowing route files to be encapsulated in directories."
+    },
+    "bundlerCompatibility": {
+      "title": "Compatibility with Any Bundler",
+      "description": "Keeps the splitting process simple and manual, making it compatible with any bundling tool."
+    },
+    "easeOfConfiguration": {
+      "title": "Ease of Configuration",
+      "description": "Intuitive usage with simple conventions."
+    },
+    "typeSafety": {
+      "title": "Type Safety",
+      "description": "Uses TypeScript to ensure type safety and avoid common errors at compile time."
+    },
+    "extensibilityAndFlexibility": {
+      "title": "Extensibility and Flexibility",
+      "description": "Allows customization and extension of routing logic to meet specific needs of complex applications."
+    }
   }
 }
